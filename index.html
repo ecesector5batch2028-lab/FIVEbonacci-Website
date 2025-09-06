@@ -12,13 +12,30 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 200vh;
+      height: 100vh;   /* ✅ fills screen height */
+      width: 100vw;    /* ✅ fills screen width */
       margin: 0;
       background: #fafafa;
     }
     .message {
       text-align: center;
       color: #333;
+      font-size: 2vw;   /* ✅ scales with screen width */
+      max-width: 90%;   /* ✅ prevents overflow on small screens */
+    }
+
+    /* Tablet and smaller */
+    @media (max-width: 768px) {
+      .message {
+        font-size: 4vw;
+      }
+    }
+
+    /* Phones */
+    @media (max-width: 480px) {
+      .message {
+        font-size: 5vw;
+      }
     }
   </style>
 </head>
@@ -29,4 +46,5 @@
   </div>
 </body>
 </html>
+
 
